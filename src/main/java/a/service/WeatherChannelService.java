@@ -1,0 +1,12 @@
+package a.service;
+
+import a.model.WeatherService;
+
+import java.util.Random;
+
+public class WeatherChannelService implements WeatherService {
+    @Override
+    public String temperature() {
+        return new Random().nextInt(100) + "c";
+    }
+}

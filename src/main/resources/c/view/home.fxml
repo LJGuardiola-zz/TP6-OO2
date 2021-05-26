@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0"
+           prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="c.view.controllers.HomeController">
+    <FlowPane alignment="CENTER" hgap="10.0" prefHeight="164.0" prefWidth="283.0">
+        <Button mnemonicParsing="false" onAction="#showFueling" text="Carga"/>
+        <Button mnemonicParsing="false" onAction="#showList" text="Ventas"/>
+    </FlowPane>
+</StackPane>

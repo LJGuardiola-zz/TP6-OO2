@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c.view.controllers.FuelingController">
+    <VBox alignment="CENTER" spacing="20.0">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Email:" />
+            <TextField fx:id="emailField" HBox.hgrow="ALWAYS" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Litros:" />
+            <TextField fx:id="litersField" HBox.hgrow="ALWAYS" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10.0">
+            <RadioButton fx:id="normalButton" mnemonicParsing="false" selected="true" text="Común" />
+            <RadioButton fx:id="superButton" mnemonicParsing="false" text="Super" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10.0">
+            <Button mnemonicParsing="false" onAction="#calculate" text="Calcular Total" />
+            <Button mnemonicParsing="false" onAction="#pay" text="Pagar" />
+        </HBox>
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+    </VBox>
+    <StackPane fx:id="loadingPanel" opacity="0.8" style="-fx-background-color: white;" visible="false">
+        <Label text="Procesando pago...">
+           <font>
+               <Font name="System Bold" size="20.0"/>
+           </font>
+        </Label>
+    </StackPane>
+</StackPane>
