@@ -1,6 +1,6 @@
 package b.model;
 
-public class Measurer extends WeatherObservable {
+public class Measurer implements Measurable {
 
     private final WeatherService weatherService;
 
@@ -8,15 +8,9 @@ public class Measurer extends WeatherObservable {
         this.weatherService = weatherService;
     }
 
-    public Measurer(WeatherService weatherService, WeatherObserver... observers) {
-        super(observers);
-        this.weatherService = weatherService;
-    }
-
-    public String readTemperature() {
-        String temperature = weatherService.temperature();
-        notify(temperature);
-        return temperature;
+    @Override
+    public String read() {
+        return weatherService.temperature();
     }
 
 }

@@ -3,6 +3,7 @@ package c.model;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 import static java.time.LocalDateTime.now;
 
@@ -31,6 +32,8 @@ public class Receipt {
 
         if (email == null || email.isEmpty())
             throw new RuntimeException("Debe ingresar el email.");
+        if (!validEmail(email))
+            throw new RuntimeException("El email ingresado no es válido.");
         this.email = email;
 
         if (date.isAfter(now()))
@@ -57,6 +60,13 @@ public class Receipt {
 
     public String getEmail() {
         return email;
+    }
+
+    private boolean validEmail(String email) {
+        return Pattern.compile(
+                "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
+                        "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+        ).matcher(email).find();
     }
 
     @Override
